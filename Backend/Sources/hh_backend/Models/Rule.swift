@@ -25,11 +25,17 @@ final class Rule: Model, Content, @unchecked Sendable {
 
     init() { }
 
-    init(id: UUID? = nil, title: String, description: String, additionalNotes: [String]? = nil) {
-        self.id = id
-        self.title = title
-        self.description = description
-        self.additionalNotes = additionalNotes
+    init(title: String, description: String, additionalNotes: [String]? = nil) {
+        self.title = title.trimmingCharacters(in: .whitespacesAndNewlines)
+        self.description = description.trimmingCharacters(in: .whitespacesAndNewlines)
+
+        if let notes = additionalNotes {
+            for note in notes {
+                self.additionalNotes = []
+                self.additionalNotes?
+                    .append(note.trimmingCharacters(in: .whitespacesAndNewlines))
+            }
+        }
     }
 
     func validate() throws {

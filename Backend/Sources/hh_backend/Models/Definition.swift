@@ -25,8 +25,7 @@ final class Definition: Model, Content, @unchecked Sendable {
 
     init() { }
 
-    init(id: UUID? = nil, words: [String], definition: String, additionalNotes: [String]? = nil) {
-        self.id = id
+    init(words: [String], definition: String, additionalNotes: [String]? = nil) {
         self.words = words
         self.definition = definition
         self.additionalNotes = additionalNotes
