@@ -125,8 +125,8 @@ struct RulesController: RouteCollection {
             throw Abort(.badRequest, reason: "Please provide at least 1 ID to delete")
         }
 
-        guard toDelete.count < 100 else {
-            throw Abort(.badRequest, reason: "You cannot create more than 100 rules at once")
+        guard toDelete.count <= 100 else {
+            throw Abort(.badRequest, reason: "You cannot delete more than 100 rules at once")
         }
 
         try await Rule.query(on: req.db)
