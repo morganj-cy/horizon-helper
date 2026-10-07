@@ -1,4 +1,5 @@
 @use 'vars' as *;
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 *,
 *::before,
@@ -6,6 +7,7 @@
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
+	font-family: 'Inter', sans-serif;
 }
 
 body {
@@ -15,4 +17,13 @@ body {
 
 a {
 	color: $accent;
+}
+
+button {
+	background-color: $white;
+	border-radius: 2px;
+	padding: 12px 16px;
+	font-size: 1rem;
+	border-radius: $radius-inner;
+	border: none;
 }

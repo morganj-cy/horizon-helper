@@ -2,7 +2,11 @@
 	"extends": "$app/tsconfig",
 	"compilerOptions": {
 		"strict": true,
-		"types": ["$app/types", "node"]
+		"types": ["$app/types", "node"],
+		"paths": {
+			"#components": ["./src/lib/components"],
+			"#components/*": ["./src/lib/components/*"]
+		}
 	},
 	"include": ["src", "vite.config.ts"]
 }
