@@ -21,6 +21,7 @@ func configure(_ app: Application) async throws {
     as: .mysql)
 
     app.migrations.add(CreateRule())
+    app.migrations.add(CreateDefinition())
 
     if app.environment == .development {
         try await app.autoMigrate()
